@@ -27,6 +27,11 @@ export type Meta = any;
 
 export type AxisId = 'y' | 'y1';
 
+export interface ViewBox {
+  width: number;
+  height: number;
+}
+
 export interface Options<
   TXAxisOptions = AxisOptions,
   TYAxisOptions = TXAxisOptions
@@ -73,6 +78,10 @@ export interface Options<
   classNames?: Record<string, string>;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   plugins?: (Plugin | [Plugin, any])[];
+  /**
+   * Define the ViewBox for an SVG, this is optional and only required if you need a scalable chart. This should be used together with responsive options to ensure a proper text size.
+   */
+  viewBox?: ViewBox;
 }
 
 export interface AxisOptions {
