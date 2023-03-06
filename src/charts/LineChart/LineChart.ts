@@ -304,7 +304,8 @@ export class LineChart extends BaseChart<LineChartEventsTypes> {
       this.container,
       options.width,
       options.height,
-      options.classNames.chart
+      options.classNames.chart,
+      options.viewBox
     );
 
     this.svg = svg;
