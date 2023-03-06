@@ -114,7 +114,8 @@ export type LineChartOptionsWithDefaults = RequiredKeys<
   | 'lineSmooth'
   | 'chartPadding'
   | 'axisX'
-  | 'axisY',
+  | 'axisY'
+  | 'axisY1',
   'classNames'
 >;
 
