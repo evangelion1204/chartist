@@ -623,3 +623,34 @@ export function PathAnimation() {
 
   return root;
 }
+
+export function DualYAxis() {
+  const root = document.createElement('div');
+
+  new LineChart(
+    root,
+    {
+      labels: ['W1', 'W2', 'W3', 'W4', 'W5', 'W6', 'W6', 'W7'],
+      series: [
+        {
+          name: 'series-left',
+          data: [5, 2, -4, 2, 0, -2, 5, -3],
+          axisId: 'y'
+        },
+        {
+          name: 'series-right',
+          data: [10, -40, 30, 20, 0, 10, 40, -10],
+          axisId: 'y1'
+        }
+      ]
+    },
+    {
+      fullWidth: true,
+      chartPadding: {
+        right: 40
+      }
+    }
+  );
+
+  return root;
+}

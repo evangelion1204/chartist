@@ -25,6 +25,8 @@ export type Plugin = (chart: any, options?: any) => void;
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export type Meta = any;
 
+export type AxisId = 'y' | 'y1';
+
 export interface Options<
   TXAxisOptions = AxisOptions,
   TYAxisOptions = TXAxisOptions
@@ -61,6 +63,10 @@ export interface Options<
    * Options for Y-Axis
    */
   axisY?: TYAxisOptions;
+  /**
+   * Options for 2nd Y-Axis
+   */
+  axisY1?: TYAxisOptions;
   /**
    * Override the class names that get used to generate the SVG structure of the chart
    */
@@ -215,6 +221,7 @@ export type Series<T = SeriesPrimitiveValue> = SeriesValue<T>[];
 
 export interface SeriesObject<T = SeriesPrimitiveValue> {
   name?: string;
+  axisId?: AxisId;
   className?: string;
   meta?: Meta;
   data: SeriesValue<T>[];
@@ -250,6 +257,7 @@ export type FlatSeriesPrimitiveValue = number | string | null | undefined;
 
 export interface FlatSeriesObjectValue<T = FlatSeriesPrimitiveValue> {
   name?: string;
+  axisId?: AxisId;
   className?: string;
   meta?: Meta;
   value: T;
@@ -297,6 +305,7 @@ export interface CreatedEvent<TOptions = Options> {
   chartRect: ChartRect;
   axisX: Axis;
   axisY: Axis;
+  axisY1?: Axis;
   svg: Svg;
   options: TOptions;
 }
