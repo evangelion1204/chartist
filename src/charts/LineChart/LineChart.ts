@@ -344,8 +344,8 @@ export class LineChart extends BaseChart<LineChartEventsTypes> {
           chartRect,
           {
             ...optionsY,
-            high: isNumeric(options.high) ? options.high : options.axisY.high,
-            low: isNumeric(options.low) ? options.low : options.axisY.low
+            high: isNumeric(options.high) ? options.high : optionsY.high,
+            low: isNumeric(options.low) ? options.low : optionsY.low
           }
         );
       } else {
